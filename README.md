@@ -1,6 +1,8 @@
 # SharpBoy
 A gameboy emulator written in C# (lol imagine?)
 
+Window Rendering with SFML
+
 Resources:
 
 http://marc.rawer.de/Gameboy/Docs/GBCPUman.pdf
