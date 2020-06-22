@@ -9,4 +9,10 @@
     <PackageReference Include="SFML.Net" Version="2.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="SharpBoy.Core">
+      <HintPath>..\SharpBoy.Core\bin\Debug\netstandard2.0\SharpBoy.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
