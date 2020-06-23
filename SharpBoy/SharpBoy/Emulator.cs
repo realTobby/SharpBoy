@@ -13,14 +13,15 @@ namespace SharpBoy
         public void Start()
         {
             _components = new DMGCPU();
+            Logging.Log("Starting SharpBoy...", Severity.Information);
 
             _components.Init();
-
+            Logging.Log("Initializing components...", Severity.Information);
             GameBoyWindow gbw = new GameBoyWindow();
             gbw.Init();
-
+            Logging.Log("Creating GameBoy window...", Severity.Information);
             _components.Startup();
-
+            
             while (gbw.gameboyWindow.IsOpen)
             {
                 gbw.gameboyWindow.Clear();

@@ -14,6 +14,8 @@ namespace SharpBoy.Core
     {
         public void Foo(byte[] bytes)
         {
+            Logging.Log("Showing BIOS bytes", Severity.Error);
+
             foreach(byte b in bytes)
             {
                 Console.WriteLine(b.ToString("x8"));

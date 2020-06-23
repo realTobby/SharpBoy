@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SharpBoy.CORE;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -17,7 +18,6 @@ namespace SharpBoy.Core
         public byte[] GetBIOS()
         {
             // this is debug => the path of the bios boot rom will change eventually
-
             return File.ReadAllBytes("../../../../../gbBootROM.gb");
 
         }
