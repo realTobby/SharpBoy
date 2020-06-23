@@ -19,6 +19,33 @@ namespace SharpBoy.Core
     public class DMGCPU
     {
 
+        CPU _cpu;
+        BootROM _bootROM;
+        Input _input;
+        InteruptController _interuptController;
+        Memory _memory;
+        PixelProcessingUnit _pixelProcessingUnit;
+        SerialDataTransfer _serialDataTransfer;
+        SoundController _soundController;
+        Timer _timer;
+
+        public void Init()
+        {
+            _cpu = new CPU();
+            _bootROM = new BootROM();
+            _input = new Input();
+            _interuptController = new InteruptController();
+            _memory = new Memory();
+            _pixelProcessingUnit = new PixelProcessingUnit();
+            _serialDataTransfer = new SerialDataTransfer();
+            _soundController = new SoundController();
+            _timer = new Timer();
+        }
+
+        public void Startup()
+        {
+            _memory.Foo(_bootROM.GetBIOS());
+        }
 
 
     }

@@ -10,7 +10,18 @@ namespace SharpBoy.Core
     // sprites tiles => 4kb
 
 
-    class Memory
+    public class Memory
     {
+        public void Foo(byte[] bytes)
+        {
+            foreach(byte b in bytes)
+            {
+                Console.WriteLine(b.ToString("x8"));
+            }
+        }
+
+
+
+
     }
 }

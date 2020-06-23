@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace SharpBoy.Core
@@ -11,7 +12,16 @@ namespace SharpBoy.Core
 
     // Init RAM => Init Sound => Set up Logo => Scroll Logo => Play Sound => Scroll Logo => Decode Logo => Logo data => Compare Logo => Checksum header => Turn off ROM
 
-    class BootROM
+    public class BootROM
     {
+        public byte[] GetBIOS()
+        {
+            // this is debug => the path of the bios boot rom will change eventually
+
+            return File.ReadAllBytes("../../../../../gbBootROM.gb");
+
+        }
+
+
     }
 }
