@@ -8,11 +8,11 @@ namespace SharpBoy
 {
     public class Emulator
     {
-        DMGCPU _components;
+        DMG _components;
 
         public void Start()
         {
-            _components = new DMGCPU();
+            _components = new DMG();
             Logging.Log("Starting SharpBoy...", Severity.Information);
 
             _components.Init();

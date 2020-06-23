@@ -6,7 +6,7 @@ using System.Text;
 namespace SharpBoy.Core
 {
 
-    // ALL OF THE COMPONENT CLASSES WILL BE USED INSIDE HERE ==> DMGCPU HANDLES EVERYTHING ELSE
+    // ALL OF THE COMPONENT CLASSES WILL BE USED INSIDE HERE ==> DMGCPU HANDLES EVERYTHING (MOTHERBOARD IF YOU WILL)
     /* BootROM
      * CPU
      * Input
@@ -17,7 +17,7 @@ namespace SharpBoy.Core
      * SoundController
      * Timer
      * */
-    public class DMGCPU
+    public class DMG
     {
 
         CPU _cpu;
