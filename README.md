@@ -11,7 +11,6 @@ http://bgb.bircd.org/pandocs.htm
 
 https://gbdev.io/list.html
 
-http://www.akkit.org/info/gbatek.htm
 
 Features:
 (good joke lol)
