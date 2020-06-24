@@ -4,24 +4,24 @@ using System.Text;
 
 namespace SharpBoy.Core
 {
-    public class Cartridge
+    public static class Cartridge
     {
 
-        private byte[] ROM;
+        private static byte[] ROM;
 
-        public void FillROM(byte[] data)
+        public static void FillROM(byte[] data)
         {
             ROM = data;
         }
 
-        public byte ReadInstruction(int PC)
+        public static byte ReadByte(int PC)
         {
             if(PC < ROM.Length)
                 return ROM[PC];
             return 0;
         }
 
-        public int GetROMLength()
+        public static int GetROMLength()
         {
             return ROM.Length;
         }

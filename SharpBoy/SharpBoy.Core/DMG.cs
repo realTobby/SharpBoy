@@ -22,7 +22,6 @@ namespace SharpBoy.Core
     {
 
         CPU _cpu;
-        Cartridge _cartridge;
         BootROM _bootROM;
         Input _input;
         InteruptController _interuptController;
@@ -31,13 +30,9 @@ namespace SharpBoy.Core
         SerialDataTransfer _serialDataTransfer;
         SoundController _soundController;
         Timer _timer;
-
-        InstructionHandler _instructionHandler;
-
         public void Init()
         {
             _cpu = new CPU();
-            _cartridge = new Cartridge();
             _bootROM = new BootROM();
             _input = new Input();
             _interuptController = new InteruptController();
@@ -47,32 +42,31 @@ namespace SharpBoy.Core
             _soundController = new SoundController();
             _timer = new Timer();
 
-            _instructionHandler = new InstructionHandler();
         }
 
         public void LoadROM()
         {
             byte[] data = _bootROM.GetBIOS();
-            _cartridge.FillROM(data);
+            Cartridge.FillROM(data);
         }
 
         public void LoadROM(string path)
         {
             byte[] data = File.ReadAllBytes(path);
-            _cartridge.FillROM(data);
+            Cartridge.FillROM(data);
         }
 
         public void EmulateNextInstruction()
         {
-            var nextOpcode = _cartridge.ReadInstruction(_cpu.ProgramCounter);
+            var nextOpcode = Cartridge.ReadByte(_cpu._cpuRegisters.PC);
             Console.WriteLine("BYTE: " + nextOpcode);
-            _instructionHandler.HandleInstrcution(nextOpcode);
-            _cpu.ProgramCounter++;
+            _cpu.HandleInstrcution(nextOpcode);
+            Console.WriteLine("Cycles: " + _cpu._cycleCounter);
         }
 
         public bool HasInstructionsLeft()
         {
-            if (_cpu.ProgramCounter >= _cartridge.GetROMLength())
+            if (_cpu._cpuRegisters.PC >= Cartridge.GetROMLength())
                 return false;
             return true;
         }
