@@ -12,18 +12,6 @@ namespace SharpBoy.Core
 
     public class Memory
     {
-        public void Foo(byte[] bytes)
-        {
-            Console.WriteLine(BitConverter.ToString(bytes));
-
-            foreach (byte b in bytes)
-            {
-                
-            }
-        }
-
-
-
 
     }
 }

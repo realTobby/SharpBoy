@@ -8,19 +8,19 @@ namespace SharpBoy
 {
     public class Emulator
     {
-        DMG _components;
+        DMG _dmgMain;
 
         public void Start()
         {
-            _components = new DMG();
+            _dmgMain = new DMG();
             Logging.Log("Starting SharpBoy...", Severity.Information);
 
-            _components.Init();
+            _dmgMain.Init();
             Logging.Log("Initializing components...", Severity.Information);
             GameBoyWindow gbw = new GameBoyWindow();
             gbw.Init();
             Logging.Log("Creating GameBoy window...", Severity.Information);
-            _components.Startup();
+            _dmgMain.LoadROM(@"C:\Users\tkatt\Desktop\tetris.gb");
             
             while (gbw.gameboyWindow.IsOpen)
             {
@@ -28,16 +28,15 @@ namespace SharpBoy
                 gbw.gameboyWindow.DispatchEvents();
                 gbw.gameboyWindow.Display();
 
-                Tick();
+                if(_dmgMain.HasInstructionsLeft())
+                    Tick();
 
             }
         }
 
         public void Tick()
         {
-
-
-
+            _dmgMain.EmulateNextInstruction();
         }
 
     }

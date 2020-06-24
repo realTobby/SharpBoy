@@ -38,34 +38,11 @@ namespace SharpBoy.Core
         byte[] input;
         byte[] hram;
 
+        public int ProgramCounter = 0; // => points to the next instruction
 
-        int programCounter; // => points to the next instruction
-        int stackPointer; // => points to the next unused space in the stack
+        
 
-        public void Rotate()
-        {
 
-        }
-
-        public void Swap()
-        {
-
-        }
-
-        public void Test()
-        {
-
-        }
-
-        public void Set()
-        {
-            
-        }
-
-        public void Reset()
-        {
-
-        }
 
 
     }
