@@ -11,12 +11,30 @@ namespace SharpBoy
     public class GameBoyWindow
     {
         public RenderWindow gameboyWindow;
+        public float videoOutputScale = 4.0f;   // Scalefactor for Output Video 
+
         public void Init()
         {
-            gameboyWindow = new RenderWindow(new VideoMode(160, 144), "SharpBoy");
+            gameboyWindow = new RenderWindow(new VideoMode((uint)(160 * videoOutputScale), (uint)(144 * videoOutputScale)), "SharpBoy", Styles.Close);
             gameboyWindow.SetActive();
+
+            gameboyWindow.KeyPressed += Window_KeyPressed;
+            gameboyWindow.Closed += Window_Closed;
         }
 
+        private void Window_KeyPressed(object sender, SFML.Window.KeyEventArgs e)
+        {
+            var window = (SFML.Window.Window)sender;
+            if (e.Code == SFML.Window.Keyboard.Key.Escape)
+            {
+                
+            }
+        }
 
+        private void Window_Closed(object sender, System.EventArgs e)
+        {
+            var window = (SFML.Window.Window)sender;
+                window.Close();
+        }
     }
 }
