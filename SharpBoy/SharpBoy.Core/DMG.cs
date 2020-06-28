@@ -46,14 +46,14 @@ namespace SharpBoy.Core
 
         public void LoadROM()
         {
-            byte[] data = _bootROM.GetBIOS();
-            Cartridge.FillROM(data);
+            //byte[] data = _bootROM.GetBIOS();
+            //Cartridge.FillROM(data);
         }
 
         public void LoadROM(string path)
         {
-            byte[] data = File.ReadAllBytes(path);
-            Cartridge.FillROM(data);
+            //byte[] data = File.ReadAllBytes(path);
+            //Cartridge.FillROM(data);
         }
 
         public void EmulateNextInstruction()

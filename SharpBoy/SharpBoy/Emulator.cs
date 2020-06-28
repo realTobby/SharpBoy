@@ -20,7 +20,7 @@ namespace SharpBoy
             GameBoyWindow gbw = new GameBoyWindow();
             gbw.Init();
             Logging.Log("Creating GameBoy window...", Severity.Information);
-            _dmgMain.LoadROM(@"C:\Users\tkatt\Desktop\tetris.gb");
+            //_dmgMain.LoadROM(@"C:\Users\tkatt\Desktop\tetris.gb");
             
             while (gbw.gameboyWindow.IsOpen)
             {

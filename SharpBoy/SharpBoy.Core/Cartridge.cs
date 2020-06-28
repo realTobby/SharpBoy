@@ -16,13 +16,14 @@ namespace SharpBoy.Core
 
         public static byte ReadByte(int PC)
         {
-            if(PC < ROM.Length)
-                return ROM[PC];
+           // if(PC < ROM.Length)
+               // return ROM[PC];
             return 0;
         }
 
         public static int GetROMLength()
         {
+            return 1;
             return ROM.Length;
         }
 
